@@ -1,4 +1,3 @@
-
 *,
 *:before,
 *:after {
@@ -56,24 +55,30 @@ body {
 }
 
 .header {
-  width: 100%;
+  width: 88%;
   margin: 0;
   color: #ffffff;
   font-size: 16px;
   background-color: #1775b9;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 200px;
 }
 
-.login-link{
+.login-link {
   font-weight: normal;
+}
+
+.logout-link {
+  font-weight: normal;
+  padding-top: 18px;
 }
 
 .footer {
   position: fixed;
   left: 0;
   right: 0;
-  /* display: block; */
 }
 
 h4 {
@@ -133,7 +138,6 @@ h4 {
 
 .edit-status {
   margin-left: 1px;
-  /* width: 100%; */
 }
 
 .select-status {
@@ -243,12 +247,12 @@ h4 {
 }
 
 .task-description {
-height: 74px;
-line-height: 1.6;
-margin-top: 2px;
+  height: 74px;
+  line-height: 1.6;
+  margin-top: 2px;
 }
 
-.task-item-btn{
+.task-item-btn {
   display: flex;
   justify-content: space-around;
 }
@@ -261,12 +265,12 @@ margin-top: 2px;
   padding: 6px 12px;
 }
 
-.task-item-edit, .task-item-delete{
+.task-item-edit,
+.task-item-delete {
   font-weight: bold;
   font-size: 24px;
   color: #000;
 }
-
 
 /* ------------------------------------------------- */
 
