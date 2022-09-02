@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { addTasks, deleteTasks } from "../../redux/reducer/app";
 import { GoPlus } from "react-icons/go";
-
 import TaskItem from "../../components/TaskItem";
 import { useLocation } from "react-router-dom";
 
@@ -113,10 +112,10 @@ const Tasks = (props) => {
   };
 
   useEffect(() => {
-    if (props.tasks.addTaskReducer.length <= 0) {
+    if (props.tasks.taskReducer.length <= 0) {
       getData("http://localhost:8080/CRUD/read_all");
     } else {
-      props.tasks.addTaskReducer.map((task) => {
+      props.tasks.taskReducer.map((task) => {
         if (data !== undefined) {
           if (data.id === task.id) {
             if (data.title.trim().length === 0) {
@@ -180,8 +179,8 @@ const Tasks = (props) => {
       <div className="container2">
         <h4 className="task-list-title">Tasks</h4>
         <div className="task-list">
-          {props.tasks.addTaskReducer.length > 0
-            ? props.tasks.addTaskReducer.map((task) => {
+          {props.tasks.taskReducer.length > 0
+            ? props.tasks.taskReducer.map((task) => {
                 return (
                   <TaskItem
                     key={task.id}
