@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "../../App.css";
 import { useHistory } from "react-router-dom";
-// import { useDispatch } from 'react-redux'
 
 const Login = () => {
-  // const dispatch = useDispatch();
   const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -45,13 +43,13 @@ const Login = () => {
         console.log("error");
       });
 
-    //console.log(result);
-
     if (result === "Admin") {
-      //dispatch({type: "ADMIN", payload: result});
+      localStorage.setItem('user', result);
+      
       setUsername("");
       setPassword("");
       history.push("/");
+      window.location.href = "/";
     } else {
       alert("Invalid Input!");
     }
