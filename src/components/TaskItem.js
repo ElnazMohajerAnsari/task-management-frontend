@@ -3,6 +3,23 @@ import { AiOutlineEdit, AiOutlineDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const TaskItem = (props) => {
+  var deleteLink;
+  if (localStorage.getItem("user") === "Admin") {
+    deleteLink = (
+      <Link
+        to="/"
+        type="button"
+        onClick={() => {
+          deleteTask(task.id);
+          handleDeleteTask(task.id);
+        }}
+        className="task-item-delete"
+      >
+        <AiOutlineDelete />
+      </Link>
+    );
+  }
+
   const { task, deleteTask } = props;
 
   const data = {
@@ -46,17 +63,7 @@ const TaskItem = (props) => {
           <AiOutlineEdit />
         </Link>
 
-        <Link
-          to="/"
-          type="button"
-          onClick={() => {
-            deleteTask(task.id);
-            handleDeleteTask(task.id);
-          }}
-          className="task-item-delete"
-        >
-          <AiOutlineDelete />
-        </Link>
+        {deleteLink}
       </div>
     </div>
   );
